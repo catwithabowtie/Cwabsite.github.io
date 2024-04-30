@@ -1,0 +1,166 @@
+body {
+    overflow-x: hidden;
+}
+* {
+    font-family: "Poppins", sans-serif;   
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+
+#project_container {
+    position: relative;
+    bottom: 500px;
+    background-color: black;
+    width: 600px;
+    height: 500px;
+    z-index: 0;
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px 100px ;
+    grid-area: auto;
+    gap: 15px 67px;
+}
+.project__ {
+    border-radius: 10%;
+    border: 5px solid red;
+    color: white;
+    background-image: linear-gradient(darkgray 76%, white);
+    opacity: 50%;
+    grid-column: span 2;
+    
+    grid-row: span 2;
+    
+}
+#navbar {
+    position: fixed;
+    background-color: rgb(220, 118, 81);
+    width: clamp(120px, 300px, 500px);
+    height: 100vh;
+    left: 5px;
+    top: 5px;
+    border-radius: 10px;
+    
+        
+    text-align: center;
+    
+    z-index: 600;
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+#animationplayer {
+    
+    background-color: black;
+}
+.rotate {
+    animation: rotate 0.8s ease forwards;
+}
+#youtube {
+    background-color: burlywood;
+    height: 80px;
+    margin-top: 20px;
+    max-height: 100px;
+    display: flexbox;
+    justify-content: center;
+    padding-top: 29px;
+    font-size: xx-large;
+    z-index: 600;
+}
+#github {
+    background-color: burlywood;
+    height: 80px;
+    margin-top: 20px;
+    max-height: 100px;
+    display: flexbox;
+    justify-content: center;
+    padding-top: 29px;
+    font-size: xx-large;
+    z-index: 600;
+}
+#me {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid black;
+    transition: transform 0.5s ease;
+    transform: rotate(360deg);
+    
+}
+@keyframes slideright {
+    from {
+        background-color: rgb(220, 118, 81);
+        
+    }
+    to {
+        background-color: rgb(220, 118, 81);
+        transform: translateX(40px);
+        border-radius: 10px;
+    }
+}
+@keyframes navhide {
+    from {
+        transform: translateX(-80px);
+    }
+    to {
+        transform: translateX(60px);
+    }
+}
+@keyframes slideback {
+    from {
+        transform: translateX(0px);
+    }
+    to {
+        transform: translateX(0px);
+    }
+}
+
+#youtube:hover {
+    animation-name: slideright;
+    animation-duration: 0.8s;
+    animation-delay: 0s;
+    animation-direction: both;
+    animation-fill-mode: forwards;
+}
+#youtube:not(:hover) {
+    animation-name: slideback;
+    animation-duration: 0.8s;
+    animation-delay: 0s;
+    animation-fill-mode: both;
+}
+#github:hover {
+    animation-name: slideright;
+    animation-duration: 0.8s;
+    animation-delay: 0s;
+    animation-fill-mode: both;
+}
+@keyframes rotate {
+    from {
+        rotate: 0deg;
+    }
+    to {
+        rotate: 360deg;
+    }
+}
+
+#text3 {
+    display: flex;
+    position: static;
+    width: 1600px;
+    left: 300px;
+    z-index: -10;
+    bottom: 900px;
+    height: 800px;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+#mainsection {
+    color: rgb(0, 0, 0);
+}

@@ -8,30 +8,36 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="shittyclick.css">
+    <link rel="icon" href="cat bowtie.png">
 </head>
 <body>
     <script src="app.js"></script>
-    
     <div id="game">
         <p id="counter" class="smallfont">You have: 0 points (click cwab to get points)</p>
         <div id="catcontainer">
             
             <img src="cat bowtie.png" alt="" id="cwab">
+            <p id="autoclicktimer">0000</p>
         </div>
         <div id="buystuff">
             
             <p id="buypower" class="powerup">click power up</p>
             <small><p id="buypowerdesc" class="powerup">cost:25, power:10, bought:0 adds 10 power to your clicks.</p></small>
             <p id="autoclick" class="powerup">autoclicker</p>
-            <small><p class="powerup" id="autoclickdesc">cost:100, rate:1/1s, clicks every x amount of seconds</p></small>
+            <p id="autoclickdesc">cost:100, rate:1/6000ms,bought:0, power:1, clicks every x amount of seconds</p>
+        </div>
+        <div id="options">
+            <div id="configdiv" >
+                <button id="achivementbutton" class="configdivbutton">Config Menu</button><br>
+               <small><p id="totalpointcounter" class="totalcounter">You have a total of: 0 points in this run.</p></small>
+               <small><p id="totalupgradecounter" class="totalcounter">You have bought a total of: 0 upgrades this run.</p></small>
+            </div>
         </div>
         
         <div id="extraupgrades" class="fixmoveupxtra">
-            <div id="configdiv" >
-                <button id="achivementbutton" class="configdivbutton">Achivements</button>
-            </div>
+            
             <div id="shop">
-                <a href="gritigleshop.html" class="griticlke"><img src="images/gritigleshopdoor.png" alt="gritigle" id="grit" class="griticlke"></a>
+                <a href="gritigleshop.html" class="griticlke"><img src="images/Stand.png" alt="gritigle" id="grit" class="griticlke"></a>
             </div>
             <div id="slot">
                 

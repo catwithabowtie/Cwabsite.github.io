@@ -5,6 +5,7 @@
 .invisible {
    filter: opacity(100%);
 }
+
 body {
     
     font-family: "Roboto Mono", sans-serif;
@@ -15,26 +16,36 @@ body {
     height: 100vh;
 
 }
-
+.totalcounter {
+    font-size: x-small;
+    color: white;
+    font-style: italic;
+}
 .configdivbutton {
+    
+    margin-top: 10px;
+    margin-bottom: 10px;
     width: 100px;
     height: 50px;
 }
-#configdiv {
-    background-size: 100%;
+#configdiv{
+    position: relative;
     
-    
-    height: 400px;
-    width: 100%;
-    background-color: aquamarine;
+    left: 505px;
+    height: 200px;
+    padding: 10px;
+    z-index: 99;
+    width: fit-content;
+    background-color: #173f5f;
+    background-color: var(--hover_background_blue);
     margin-bottom: 360px;
 }
 #grit {
 
     position: absolute;
     top: 1000px;
-    left: 250px;
-    width: 30%;
+    left: 175px;
+    width: 50%;
     height: 300px;
     
 }
@@ -80,6 +91,9 @@ body {
         height: 100px;
     }
 }
+.nooverflow {
+    white-space: nowrap;
+}
 .smallfont {
    position: relative;
     top: 25px;
@@ -114,6 +128,7 @@ body {
 #autoclick {
     cursor: pointer;
 }
+
 #cwab {
     position: relative;
     top: 60px;
@@ -125,16 +140,79 @@ body {
     height: 230px;
     cursor: pointer;
 }
-
-#buystuff {
-    text-align: right;
-    position: absolute;
-    top: 5px;
-    font-weight: bold;
-    font-size: large;
-    right: 180px;
+#autoclickdesc {
+    font-size: small;
 }
-
+#buystuff {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+    right: 0px;
+    font-weight: bold;
+    top: 0px;
+    width: 704px;
+    background-color: rgb(255, 255, 255);
+    
+}
+#buystuff > * {
+    z-index: 999;
+}
+@media only screen and (max-width:390px) and (max-height:844px) {
+    #buystuff {
+        position: relative !important;
+        display: flex !important;
+        flex-direction: row;
+        gap: 40px !important;
+        right: 8px; /* idk but yesa*/
+        resize: none;
+        z-index: 9999;
+        overflow-x: scroll;
+        height: 200px !important;
+        max-height: 340px;
+        width: 100vw !important;
+        
+        background-color: #173f5f !important;
+    }
+    #cwab {
+        position: relative !important;
+        height: 200px !important;
+        width: 200px !important;
+    }
+    #catcontainer {
+        position:  relative !important;
+        right: 50px !important;
+        top: 0px;
+        width: 100vw !important;
+        
+    }
+    #extraupgrades {
+        position: absolute;
+        top: 840px !important;
+        width: 100vw !important;
+        height: 900px !important;
+        left: 0px !important;
+        background-color: red;
+    }
+    #configdiv {
+        position: absolute !important;
+        left: 0px;
+        width: 100vw !important;
+        height: 140px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    #counter {
+        top:100px;
+        position: relative;
+        font-size: medium !important;
+    }
+   
+    body {
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+}
 #buypower {
 
     cursor: pointer;

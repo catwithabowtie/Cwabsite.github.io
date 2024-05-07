@@ -1,182 +1,239 @@
+:root {
+    --hover_background_blue: #173f5f;
+    --normal_background_blue: #20639b;
+}
+.invisible {
+   filter: opacity(100%);
+}
+
 body {
-    overflow-x: hidden;
-}
-* {
-    font-family: "Poppins", sans-serif;   
-}
-a {
-    color: white;
-    text-decoration: none;
-}
-#cwab_background_button {
-    z-index: 1;
-    width: 123px;
-    filter: opacity(25%);
-    height: 120px;
-    left: 38px;
-}
-#project_container {
-    position: absolute;
-    left: 410px;
-    top: 270px;
-    width: 700px;
-    height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: column;   
-    background-color: red;
     
+    font-family: "Roboto Mono", sans-serif;
 }
-#cwabclickertitle {
-    position: absolute;
-    font-size: medium;
-    z-index: 999;
-    
-}
-#project_container > * {
-    margin: 30px;
-    font-size: x-large;
-    width: 100px;
-    height: 100px;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-   border-radius: 10px;
+#curtain {
     background-color: black;
-    color: white;
-}
-
-#navbar {
-    position: fixed;
-    background-color: rgb(220, 118, 81);
-    width: clamp(120px, 300px, 500px);
+    width: 100vh;
     height: 100vh;
-    left: 5px;
-    top: 5px;
-    border-radius: 10px;
+
+}
+.totalcounter {
+    font-size: x-small;
+    color: white;
+    font-style: italic;
+}
+.configdivbutton {
     
-        
-    text-align: center;
-    
-    z-index: 600;
-}
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-#animationplayer {
-    
-    background-color: black;
-}
-.rotate {
-    animation: rotate 0.8s ease forwards;
-}
-#youtube {
-    background-color: burlywood;
-    height: 80px;
-    margin-top: 20px;
-    max-height: 100px;
-    display: flexbox;
-    justify-content: center;
-    padding-top: 29px;
-    font-size: xx-large;
-    z-index: 600;
-}
-#github {
-    background-color: burlywood;
-    height: 80px;
-    margin-top: 20px;
-    max-height: 100px;
-    display: flexbox;
-    justify-content: center;
-    padding-top: 29px;
-    font-size: xx-large;
-    z-index: 600;
-}
-#me {
+    margin-top: 10px;
+    margin-bottom: 10px;
     width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border: 3px solid black;
-    transition: transform 0.5s ease;
-    transform: rotate(360deg);
+    height: 50px;
+}
+#configdiv{
+    position: relative;
+    
+    left: 505px;
+    height: 200px;
+    padding: 10px;
+    z-index: 99;
+    width: fit-content;
+    background-color: #173f5f;
+    background-color: var(--hover_background_blue);
+    margin-bottom: 360px;
+}
+#grit {
+
+    position: absolute;
+    top: 1000px;
+    left: 175px;
+    width: 50%;
+    height: 300px;
     
 }
-@keyframes slideright {
+#extraupgrades {
+    position: absolute;
+    display: flex;
+    left: 513px;
+    justify-items: center;
+    width: 700px;
+    max-width: 700px;
+    
+    top: 0px;
+    border-right: 3px solid black;
+    border-top: 3px solid black;
+    overflow-y: scroll;
+    height: 1400px;
+    background: #ffffff;
+}
+.fixmovextra {
+    position: absolute;
+    top: 0px;
+
+}
+@keyframes upanimation {
     from {
-        background-color: rgb(220, 118, 81);
+        transform: translateY(0px);
+        background-color: var(--normal_background_blue);
+    }
+    to {
+        transform: translateY(5px);
+        background-color: var(--hover_background_blue);
         
     }
-    to {
-        background-color: rgb(220, 118, 81);
-        transform: translateX(40px);
-        border-radius: 10px;
-    }
-}
-@keyframes navhide {
-    from {
-        transform: translateX(-80px);
-    }
-    to {
-        transform: translateX(60px);
-    }
-}
-@keyframes slideback {
-    from {
-        transform: translateX(0px);
-    }
-    to {
-        transform: translateX(0px);
-    }
 }
 
-#youtube:hover {
-    animation-name: slideright;
-    animation-duration: 0.8s;
-    animation-delay: 0s;
-    animation-direction: both;
-    animation-fill-mode: forwards;
-}
-#youtube:not(:hover) {
-    animation-name: slideback;
-    animation-duration: 0.8s;
-    animation-delay: 0s;
-    animation-fill-mode: both;
-}
-#github:hover {
-    animation-name: slideright;
-    animation-duration: 0.8s;
-    animation-delay: 0s;
-    animation-fill-mode: both;
-}
-@keyframes rotate {
+@keyframes srhinkdown {
     from {
-        rotate: 0deg;
+        width: 230px;
+        height: 230px;
     }
     to {
-        rotate: 360deg;
+        width: 100px;
+        height: 100px;
     }
 }
-
-#text3 {
+.nooverflow {
+    white-space: nowrap;
+}
+.smallfont {
+   position: relative;
+    top: 25px;
+    left: 110px;
+    width: 200px;
+    font-size: small !important; 
+}
+.bigfont {
+    font-size: x-large;
+    width: 200px;
+    
+}
+#counter {
+    position: fixed;
+    top: 25px;
+    left: 150px;
+    white-space: nowrap;
+    font-size: x-large;
+}
+#catcontainer {
+    position: fixed;
     display: flex;
-    position: static;
-    width: 1600px;
-    left: 300px;
-    z-index: -10;
-    bottom: 900px;
-    height: 800px;
+    
+    top: 0px;
+    bottom: 40px;
+    width: 500px;
+    height: 100vw;
+    align-items: 700px;
     justify-content: center;
-    background-color: rgb(255, 255, 255);
-    color: black;
+    border: 3px solid black;
 }
-#mainsection {
-    color: rgb(0, 0, 0);
+#autoclick {
+    cursor: pointer;
+}
+
+#cwab {
+    position: relative;
+    top: 60px;
+    margin: 50px;
+    border-radius: 10em;
+    border: 3px solid black;
+    width: 230px;
+    animation: srhingdown 0.4s linear 0s 1 forwards;
+    height: 230px;
+    cursor: pointer;
+}
+#autoclickdesc {
+    font-size: small;
+}
+#buystuff {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+    right: 0px;
+    font-weight: bold;
+    top: 0px;
+    width: 704px;
+    background-color: rgb(255, 255, 255);
+    
+}
+#buystuff > * {
+    z-index: 999;
+}
+@media only screen and (max-width:670px) and (max-height:1004px) {
+    #buystuff {
+        position: absolute !important;
+        display: flex !important;
+        flex-direction: row;
+        gap: 40px !important;
+        right: 0px; /* idk but yesa*/
+        resize: none;
+        z-index: 9999;
+        margin-top: 40px;
+        margin-bottom: 50px;
+        top: 800px;
+        overflow-x: scroll;
+        height: 200px !important;
+        max-height: 340px;
+        width: 100vw !important;
+        
+        background-color: #173f5f !important;
+    }
+    #cwab {
+        position: relative !important;
+        height: 200px !important;
+        width: 200px !important;
+    }
+
+    #catcontainer {
+        position: absolute !important;
+        display: flex;
+        overflow: hidden;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        top: 50px;
+        left: 0px;
+        right: 0px;
+        height: 500px;
+        max-height: 500px;
+        min-height: 300px;
+        width: 100vw !important;
+        
+    }
+    #extraupgrades {
+        position: absolute;
+        display: flex;
+        justify-content: center !important;
+        flex-direction: column !important;
+        margin-top: 40px !important;
+        top: 1004px !important;
+        width: 100vw !important;
+        height: 900px !important;
+        left: 0px !important;
+        background-color: red;
+    }
+    #gritigle {
+        width: 95px;
+        height: 65px;
+    }
+    #configdiv {
+        position: absolute !important;
+        left: 0px;
+        height: 250px;
+        top: 540px;
+        width: 100vw !important;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+   #counter {
+    position: absolute;
+   }
+   
+    body {
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+}
+#buypower {
+
+    cursor: pointer;
 }

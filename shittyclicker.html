@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="shittyclick.css">
     <link rel="icon" href="cat bowtie.png">
 </head>
+
 <body>
     <script src="app.js"></script>
     <div id="game">
@@ -31,7 +32,17 @@
                 <button id="achivementbutton" class="configdivbutton">Config Menu</button><br>
                <small><p id="totalpointcounter" class="totalcounter">You have a total of: 0 points in this run.</p></small>
                <small><p id="totalupgradecounter" class="totalcounter">You have bought a total of: 0 upgrades this run.</p></small>
+               <button id="savepointsbutton">Save Game</button>
+               <button id="loadsavebutton">Load save</button>
             </div>
+            <div id="configmenunotdiv" class="invisible">
+                <p>Config Menu</p>
+                <form id="configsettingsform">
+                    <label for="darkmodeon">Darkmode</label>
+                    <input type="checkbox" id="darkmodeon">
+                    <input type="submit" value="Save settings">
+                </form>
+            </div>        
         </div>
         
         <div id="extraupgrades" class="fixmoveupxtra">

@@ -2,12 +2,18 @@
     --hover_background_blue: #173f5f;
     --normal_background_blue: #20639b;
 }
+.fixedposition {
+    position: static;
+    background-color: #5f1717;
+}
 .invisible {
-   filter: opacity(100%);
+    z-index:-999;
+   opacity: 0;
+   background-image: url(cat\ bowtie.png);
 }
 
 body {
-    
+    overflow-x: hidden;
     font-family: "Roboto Mono", sans-serif;
 }
 #curtain {
@@ -35,10 +41,27 @@ body {
     height: 200px;
     padding: 10px;
     z-index: 99;
-    width: fit-content;
+    width: 30vw;
     background-color: #173f5f;
     background-color: var(--hover_background_blue);
     margin-bottom: 360px;
+}
+#configmenunotdiv {
+    
+    position: relative;
+    
+    left: 505px;
+    height: 200px;
+    padding: 10px;
+    z-index: 99;
+    width: 30vw;
+    background-color: var(--normal_background_blue);
+    margin-bottom: 360px;
+    bottom: 365px;
+    
+    
+    
+
 }
 #grit {
 
@@ -54,14 +77,13 @@ body {
     display: flex;
     left: 513px;
     justify-items: center;
-    width: 700px;
-    max-width: 700px;
+    width: 31vw;
     
     top: 0px;
     border-right: 3px solid black;
     border-top: 3px solid black;
     overflow-y: scroll;
-    height: 1400px;
+    height: 100%;
     background: #ffffff;
 }
 .fixmovextra {
@@ -123,6 +145,7 @@ body {
     height: 100vw;
     align-items: 700px;
     justify-content: center;
+    align-items: start;
     border: 3px solid black;
 }
 #autoclick {
@@ -144,20 +167,55 @@ body {
     font-size: small;
 }
 #buystuff {
-    position: absolute;
+    position: fixed;
     display: flex;
     flex-direction: column;
     align-self: start;
     right: 0px;
     font-weight: bold;
     top: 0px;
-    width: 704px;
-    background-color: rgb(255, 255, 255);
+    width: 40vw;
+    background-color: rgb(255, 41, 41);
     
 }
 #buystuff > * {
     z-index: 999;
 }
+@media  only screen and (max-width:1768px) and (min-width:671px) {
+    #buystuff {
+        position: relative !important;
+        width: 60vw;
+        left: 850px;
+        overflow-x: auto;
+
+    }
+    #extraupgrades {
+        position: absolute !important;
+        width: 333.15px !important;
+    }
+    #configdiv {
+        position: absolute !important;
+        top: 0px;
+        width: 322.15px !important;
+    }
+    #configmenunotdiv{
+        position: absolute !important;
+        top: 220px !important;
+        width: 322.15px !important;
+    }
+    #catcontainer {
+        position: absolute;
+    }
+    body {
+        overflow-x: auto;
+    }
+    #counter {
+        position: absolute;
+        left: 50px;
+    }
+    
+}
+
 @media only screen and (max-width:670px) and (max-height:1004px) {
     #buystuff {
         position: absolute !important;
@@ -188,8 +246,10 @@ body {
         display: flex;
         overflow: hidden;
         justify-content: center;
-        flex-direction: column;
-        align-items: center;
+        gap: 0px    ;
+        align-content: center !important;
+        flex-direction: column !important;
+        align-items: center !important;
         top: 50px;
         left: 0px;
         right: 0px;
@@ -224,8 +284,21 @@ body {
         margin-top: 15px;
         margin-bottom: 15px;
     }
+    
+    #configmenunotdiv{
+        position: fixed !important;
+        left: 20vw;
+        height: 500px;
+        top: 100px;
+        border-radius: 15px;
+        z-index: 9999999;
+        width: 60vw !important;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
    #counter {
-    position: absolute;
+        position: absolute;
+        left: 50px;
    }
    
     body {

@@ -9,17 +9,17 @@ window.onload = function() {
         document.title = `Cwabclicker, currently ${points} points.`
     }, 400)
    }
-   const loadgamebutton  = document.querySelector("#loadsavebutton") 
-   const darkmodebutton = document.querySelector("#darkmodeon")
-    const newaudio = new Audio("sounds/Cwabclicknew.wav")
-    const newupgradebuy = new Audio("sounds/Upgradebuy.wav")
+    const loadgamebutton  = document.querySelector("#loadsavebutton") 
+    const darkmodebutton = document.querySelector("#darkmodeon")
+    const newaudio = new Audio("/sounds/Cwabclicknew.wav")
+    const newupgradebuy = new Audio("../sounds/Upgradebuy.wav")
     const totalpointcounter = document.querySelector("#totalpointcounter")
     const totalevelcounter = document.querySelector("#totalupgradecounter")
-    const autoclickclick = new Audio("sounds/Autoclick1.wav")
+    const autoclickclick = new Audio("/sounds/Autoclick1.wav")
     const autoclicktimercounter = document.querySelector("#autoclicktimer")
     const savebutton = document.querySelector("#savepointsbutton")
     var cwab = document.querySelector("#cwab")
-   const configbutton = document.querySelector("#achivementbutton")
+    const configbutton = document.querySelector("#achivementbutton")
     const configmenu = document.querySelector("#configmenunotdiv")
     let visiblemenu = false
     configbutton.addEventListener("click", () => { //this is for toggling the menu on and off 
@@ -156,25 +156,15 @@ window.onload = function() {
         counter.classList.remove("smallfont")
         counter.classList.add("bigfont")
         xtraupgrades.classList.add(".fixmovextra")
-        if (booleansaved_game == false) {
-            points += power
-            totalpoints += power
-            newaudio.play()
-            totalpointcounter.innerHTML = `You have a total of: ${totalpoints} points in this run.`
-            counter.innerHTML = `You have: ${points} points`
-            console.log(points)
-            updatetitle()
-        } else if(booleansaved_game == true) {
-            gameobjectschildren[0] += power //update saving variables
-            gameobjectschildren[1] += power
-            console.log(gameobjectschildren[0],gameobjectschildren[1]) //log variable values
-            points = gameobjectschildren[0]
-            counter.innerHTML = `You have: ${gameobjectschildren[0]} save`/*counter.innerHTML = `You have: ${gameobjectschildren[0]} points (saved)`
-            
-            totalpoints.innerHTML = `You have a total of: ${localStorage.getItem("Total_points")} points in this run.`
-            totalevelcounter.innerHTML = `You have bought a total of: ${localStorage.getItem("Total_level")} upgrades this run.`
-            newaudio.play()*/
-        }
+        booleansaved_game == false
+        points += power
+        totalpoints += power
+        newaudio.play()
+        totalpointcounter.innerHTML = `You have a total of: ${totalpoints} points in this run.`
+        counter.innerHTML = `You have: ${points} points`
+        console.log(points)
+        updatetitle()
+        
         
         
         
@@ -184,29 +174,22 @@ window.onload = function() {
         
         
     }) 
-    savebutton.addEventListener("click", () => {
-        
-        function savepoints(array1,array2,array3) {
-            console.log("Saving game...")
-            console.log(`Saved game with ${gameobjectschildren[1]} points`)
-            try {
-                localStorage.setItem("Points",gameobjectschildren[0]) 
-                localStorage.setItem("Total_points", gameobjectschildren[1])
-                localStorage.setItem("Total_level", gameobjectschildren[2])                                                                                        /* [buypowercost,buypowerlevel,buypowerpower] */
-            } /*[points,totalpoints,totallevel] , [autolcickercost,autoclickerlevel,autoclickerclickpower,autoclicker_delay,autoclickdesc,autoclickdelaystring] */
-            catch (err) {
-                throw "information too big, your save might be corrupted or have too much information"
-            }
-            finally {
-                console.log(localStorage.getItem("Points"))
-            }
+    savebutton.addEventListener("click",() => {
+        function Savegametolocalstorage(array=Int16Array,arra2,array3) {
+            //Saves parameters to local storage
+            
+            
+            let storeinfo = new Array
+            storeinfo[0] = localStorage.setItem("SavedPoints",array)
+            storeinfo[1] = localStorage.setItem("Saved_Upgrades",arra2)
+            storeinfo[2] = localStorage.setItem("Total_points", array3)
+            console.log(storeinfo)
+            return console.log("Saved!")
+            
+            
         }
-        savepoints(gameobjectschildren,autoclickchildren,buypowerchildren)
-    })
-    loadgamebutton.addEventListener("click", () => {
-        console.log(localStorage.getItem("Points"))
         
-        
-        booleansaved_game = true
+        Savegametolocalstorage(gameobjectschildren[0],gameobjectschildren[2],gameobjectschildren[1])
+    
     })
 }
